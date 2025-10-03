@@ -12,7 +12,7 @@
         <h3 class="devname">Jonas Fink</h3>
         </div>
         <nav>
-            <ul>
+            <ul role="presentation">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -20,6 +20,70 @@
             </ul>
         </nav>
     </header>
-    
+    <main>
+        <section id="about">
+            <div class="about-text">
+                <h2>About</h2>
+                <p>Hi! I'm Jonas, a previous Social Worker who's on his way to become a Full-Stack Developer.
+                    From an early age I've been intereseted in all kinds of electronics as wells as videogames and started
+                    programming a few month ago. This instantly opened a whole new Galaxy for me and coding became a fix part of
+                    my everyday life. 
+                    <br>
+                    <br>
+                    Whenever I'm not enhancing my programming skills, I find balance in producing electronic dance music in cooperation 
+                    with an ukrainian label. While my biggest success regarding music is Paul van Dyke, a world-known trance legend, buying licenses from one of my releases, 
+                    I consider producing music as a hobby. 
+                    <br>
+                    <br>
+                    Another passion of me is lifting, which i practice as often as I can, because it calms my mind and the simple repetitions of the same actions over and over again 
+                    are some kind of meditation for me. 
+            </div>
+            <img class="hero-pic" src="images/social_media.jpg" alt="Jonas Fink"/>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                <div class="project-header" data-project-id="1">
+                    <h3>Full-Stack Blog App</h3>
+                    <span class="arrow-icon">→</span>
+                </div>
+                <div class="project-details" id="details-1">
+                    <img class="project-pic" src="/images/my-blog-app.png" alt="Vorschaubild">
+                    <p>Tech Stack: Node.js, Express, MongoDB, React</p>
+                    <a href="#">View on Github</a>
+                </div>
+                </div>
+            </div>
+                        <div class="projects-container">
+                <div class="project-card">
+                <div class="project-header" data-project-id="2">
+                    <h3>Product Page (E-Commerce)</h3>
+                    <span class="arrow-icon">→</span>
+                </div>
+                <div class="project-details" id="details-2">
+                    <img class="project-pic" src="/images/Healthify.png" alt="Vorschaubild">
+                    <p>Tech Stack: HTML, CSS, JS</p>
+                    <a href="#">View on Github</a>
+                </div>
+                </div>
+                    </div>
+                        <div class="projects-container">
+                <div class="project-card">
+                <div class="project-header" data-project-id="3">
+                    <h3>Calculator</h3>
+                    <span class="arrow-icon">→</span>
+                </div>
+                <div class="project-details" id="details-3">
+                    <img class="project-pic" src="/images/Calculator.png" alt="Vorschaubild">
+                    <p>Tech Stack: Node.js, Express, MongoDB, React</p>
+                    <a href="#">View on Github</a>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js">
+    </script>
 </body>
 </html>

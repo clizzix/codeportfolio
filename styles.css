@@ -1,3 +1,10 @@
+:root {
+    --background-color: #651fff;
+    --element-color: #ede7f6;
+    --accent-color: #ffab00;
+    --secondary-background: #b388ff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,12 +20,15 @@ header {
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    z-index: 1000;
+    height: 80px;
     width: 100%;
-    padding: 10px;
-    background-color:rgb(133, 135, 137);
+    padding: 1.5rem;
+    background-color: var(--background-color);
 }
 .devname {
     font-size: 1.5rem;
+    color: var(--accent-color)
 }
 nav ul {
     display: flex;
@@ -31,12 +41,131 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--element-color);
+    font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: rgb(128, 216, 128);
-    transition: 0.3s ease;
+    color: var(--accent-color);
+    transition: 0.3s ease-in;
     text-decoration: underline;
     cursor: pointer;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid gray;
+}
+
+.about-text {
+    padding-right: 1.5rem;
+    text-align: justify;
+    min-width: 300px;
+    line-height: 1.2;
+}
+
+.about-text h2{
+    margin-bottom: 1.5rem; 
+}
+
+.hero-pic {
+    height: auto;
+    min-width: 150px; 
+    max-width: 25%;
+    border-radius: 12px;
+    box-shadow: 0px 2px 2px 0 lightgrey;
+}
+
+#projects {
+    padding: 1.5rem; 
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(autofit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 1.5rem;
+}
+
+.project-card {
+    background: var(--secondary-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    color: black;
+}
+
+.transition-all-slow {
+    transition: all 0.5s ease-in-out;
+}
+
+.project-details {
+    color: black;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out
+}
+
+.project-details.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 15px;
+}
+
+.project-details.active .arrow-icon {
+    transition: transform 0.3s ease;
+}
+.arrow-icon {
+    font-weight: bold;
+}
+.project-pic {
+    max-width: 60%; 
+    border-radius: 8px;
+    height: auto; 
+    object-fit: cover;
+}
+
+.project-details a {
+    display: inline-block;
+    width: fit-content;
+    padding: 10px 20px; 
+    background-color: black;
+    color: var(--element-color);             
+    border: none;            
+    border-radius: 8px; 
+    text-decoration: none;  
+    font-weight: 600;       
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Sanfte Übergänge */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+.project-details a:hover {
+    color: var(--accent-color);
+    background-color: var(--background-color); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-1px); 
 }
