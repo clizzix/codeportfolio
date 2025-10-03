@@ -131,7 +131,7 @@ nav ul li a:hover {
 }
 
 .project-details.active {
-    max-height: 500px;
+    max-height: 600px;
     opacity: 1;
     padding: 15px;
 }
