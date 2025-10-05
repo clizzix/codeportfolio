@@ -11,8 +11,15 @@
         <div>
         <h3 class="devname">Jonas Fink</h3>
         </div>
+
+        <button class="hamburger-menu" aria-label="Menü öffnen" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
         <nav>
-            <ul role="presentation">
+            <ul class="nav-menu" role="presentation">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -50,8 +57,15 @@
                 </div>
                 <div class="project-details" id="details-3">
                     <img class="project-pic" src="images/cypher-screenshot.png" alt="Vorschaubild">
-                    <p>Tech Stack: Node.js, React, Docker, AWS</p>
-                    <a href="#">View on Github</a>
+                    <p class="project-description">Dieses Projekt ist eine moderne Audiostreaming-Plattform im Stil von SoundCloud oder Spotify, die mit einem robusten MERN-Stack
+                         realisiert wird und sich auf sicheres Content-Management und ein nahtloses Benutzererlebnis konzentriert.</p>
+                    <div class="tech-stack">
+                        <img class="tech-icon" src="images/react.svg">
+                        <img class="tech-icon" src="images/docker.svg">
+                        <img class="tech-icon" src="images/nodejs.svg">
+                        <img class="tech-icon" src="images/aws.svg">
+                    </div>
+                    <a href="https://github.com/clizzix/cypher" target="_blank">View on Github</a>
                 </div>
                 </div>
             </div>
@@ -63,8 +77,16 @@
                 </div>
                 <div class="project-details" id="details-1">
                     <img class="project-pic" src="images/my-blog-app.png" alt="Vorschaubild">
-                    <p>Tech Stack: Node.js, Express, MongoDB, React</p>
-                    <a href="#">View on Github</a>
+                    <p class="project-description">Diese App ist eine voll funktionsfähige Blog-Anwendung, die im Rahmen eines Lernprojekts entwickelt wurde,
+                         um meine Kompetenzen im modernen MERN-Stack (MongoDB, Express.js, React, Node.js) zu demonstrieren. Sie bietet vollständige CRUD- Funktionalität.
+                        Die saubere Implementierung der Validierung und der Ladezustände im Frontend war ein besonderer Fokus, um die Benutzerfreundlichkeit zu 
+                        maximieren.</p>
+                    <div class="tech-stack">
+                        <img class="tech-icon" src="images/react.svg">
+                        <img class="tech-icon" src="images/nodejs.svg">
+                        <img class="tech-icon" src="images/mongoose.svg">
+                    </div>
+                    <a href="https://github.com/clizzix/my-blogg-app-fullstack" target="_blank">View on Github</a>
                 </div>
                 </div>
             </div>
@@ -76,12 +98,18 @@
                 </div>
                 <div class="project-details" id="details-2">
                     <img class="project-pic" src="images/Healthify.png" alt="Vorschaubild">
-                    <p>Tech Stack: HTML, CSS, JS</p>
-                    <a href="#">View on Github</a>
+                    <p class="project-description">Dieses Projekt dient als Beispiel für eine Produktwebsite. Sie weißt ein klares modernes Design auf 
+                        und implementiert ein Hamburger Menü durch JavaScript. Das Design ist flexibel auf jede Bildschirmgröße angepasst.  
+                    </p>
+                    <div class="tech-stack">
+                        <img class="web-dev-icon" src="images/html5.svg">
+                        <img class="web-dev-icon" src="images/css3.svg">
+                        <img class="web-dev-icon" src="images/js.svg">
+                    </div>
+                    <a href="https://github.com/clizzix/healthify" target="_blank">View on Github</a>
                 </div>
                 </div>
             </div>
-
         </section>
         <section id="skills">
             <h2>Skills</h2>
@@ -100,6 +128,11 @@
     <footer>
         <section id="contact">
             <h2>Contact</h2>
+            <a class="mail-link" href="mailto:fink.jon@hotmail.com">fink.jon@hotmail.com</a>
+            <div class="icon-container">
+                <a href="https://www.linkedin.com/in/jonas-fink-225335355/" target="_blank"><img class="media-icon" src="images/linkedin.png"/></a>
+                <a href="https://github.com/clizzix" target="_blank"><img class="media-icon" src="images/github.png"/></a>
+            </div>
         </section>
     </footer>
     <script src="script.js">

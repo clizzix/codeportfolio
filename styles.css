@@ -1,7 +1,7 @@
 :root {
     --background-color: #7c4dff;
     --element-color: #ede7f6;
-    --accent-color: #ffab00;
+    --accent-color: #ffd500;
     --secondary-background: #b388ff;
 }
 
@@ -10,6 +10,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
@@ -26,11 +27,13 @@ header {
     padding: 1.5rem;
     background-color: var(--background-color);
 }
+
 .devname {
     font-size: 1.5rem;
     color: var(--element-color)
 }
-nav ul {
+
+nav:not(.open) ul {
     display: flex;
 }
 
@@ -52,9 +55,20 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+.hamburger-menu {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2000; 
+}
+
+
 #about {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-top: 100px;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -66,6 +80,7 @@ nav ul li a:hover {
     padding-right: 1.5rem;
     text-align: justify;
     min-width: 300px;
+    max-width: 600px;
     line-height: 1.2;
 }
 
@@ -75,10 +90,11 @@ nav ul li a:hover {
 
 .hero-pic {
     height: auto;
+    max-height: 300px;
     min-width: 150px; 
     max-width: 25%;
-    border-radius: 12px;
-    box-shadow: 0px 2px 2px 0 lightgrey;
+    border-radius: 999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #projects {
@@ -117,21 +133,27 @@ nav ul li a:hover {
     transition: all 0.5s ease-in-out;
 }
 
+.project-description {
+    padding: 1.5rem;
+    max-width: 450px;
+    text-align: justify;
+    line-height: 1.2;
+}
+
 .project-details {
     color: black;
     display: flex; 
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    max-height: 0;
+    height: 0;
     opacity: 0;
     overflow: hidden;
     padding: 0 15px;
-    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out
+    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
 
 .project-details.active {
-    max-height: 600px;
     opacity: 1;
     padding: 15px;
 }
@@ -139,11 +161,15 @@ nav ul li a:hover {
 .project-details.active .arrow-icon {
     transition: transform 0.3s ease;
 }
+
 .arrow-icon {
     font-weight: bold;
 }
+
 .project-pic {
-    max-width: 400px; 
+    max-width: 100%; 
+    width: 100%;
+    max-width: 400px;
     border-radius: 8px;
     height: auto; 
     object-fit: cover;
@@ -159,8 +185,8 @@ nav ul li a:hover {
     border-radius: 8px; 
     text-decoration: none;  
     font-weight: 600;       
-    transition: background-color 0.3s ease, transform 0.1s ease; /* Sanfte Übergänge */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+    transition: background-color 0.3s ease, transform 0.1s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .project-details a:hover {
@@ -169,6 +195,18 @@ nav ul li a:hover {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
     transform: translateY(-1px); 
 }
+.tech-icon {
+    width: 48px;
+    height: 48px;
+    filter: brightness(0);
+}
+
+.web-dev-icon {
+    width: 48px;
+    height: 48px;
+    filter: brightness(0), invert(100%);
+}
+
 #skills {
     padding: 1.5rem;
 }
@@ -195,10 +233,109 @@ nav ul li a:hover {
 }
 
 footer {
-    display: flex;
-    flex-direction: column;
     padding: 1.5rem;
     background-color: var(--background-color);
+    color: var(--element-color);   
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem
+}
+
+.mail-link {
+    text-decoration: none;
     color: var(--element-color);
+}
+
+.mail-link:hover {
+    color: var(--accent-color);
+    transition: 0.3s ease-in;
+}
+
+.icon-container a {
+    margin: 0.6rem;
+}
+
+.media-icon {
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.1));
+    transition: transform 0.2s ease;
+}
+
+.media-icon:hover {
+    transform: scale(1.1);
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--element-color); 
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 550px) {
+
+    #about {
+        flex-direction: column-reverse;
+    }
     
+    .hamburger-menu {
+        display: block;
+        margin-left: auto; 
+    }
+
+    nav ul {
+        display: none;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 80px; 
+        right: 0;
+        width: 100%;
+        height: auto;
+        background-color: var(--background-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1500;
+        overflow-y: auto;
+    }
+
+    .nav-menu.open {
+        transform: translateX(0); 
+    }
+    
+    .nav-menu.open ul {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        padding-top: 20px;
+    }
+
+    .nav-menu ul li {
+        margin: 15px 0; 
+    }
+    
+    .nav-menu ul li a {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    .hamburger-menu.open .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-menu.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.open .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
