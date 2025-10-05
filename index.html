@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <meta name="description" content="Jonas Fink, a Full Stack Developer specialized in the MERN stack.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,18 +13,18 @@
         <h3 class="devname">Jonas Fink</h3>
         </div>
 
-        <button class="hamburger-menu" aria-label="Menü öffnen" aria-expanded="false">
+        <button class="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
 
         <nav>
-            <ul class="nav-menu" role="presentation">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a role="menuitem" href="#about">About</a></li>
+                <li role="none"><a role="menuitem" href="#projects">Projects</a></li>
+                <li role="none"><a role="menuitem" href="#skills">Skills</a></li>
+                <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -40,7 +41,7 @@
                     I'm excited to combine my established professional experience with my new technical skills to deliver innovative and user-focused solutions.
                 </p>
             </div>
-            <img class="hero-pic" src="images/social_media.jpg" alt="Jonas Fink"/>
+            <img class="hero-pic" src="images/social_media.jpg" alt="Jonas Fink professional headshot"/>
         </section>
         <section id="projects">
             <h2>Projects</h2>
@@ -48,17 +49,18 @@
                 <div class="project-card">
                 <div class="project-header" data-project-id="3">
                     <h3>Music Platform</h3>
-                    <span class="arrow-icon">→</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
                 </div>
-                <div class="project-details" id="details-3">
-                    <img class="project-pic" src="images/cypher-screenshot.png" alt="Vorschaubild">
-                    <p class="project-description">Dieses Projekt ist eine moderne Audiostreaming-Plattform im Stil von SoundCloud oder Spotify, die mit einem robusten MERN-Stack
-                         realisiert wird und sich auf sicheres Content-Management und ein nahtloses Benutzererlebnis konzentriert.</p>
+                <div class="project-details" id="details-3" hidden>
+                    <img class="project-pic" src="images/cypher-screenshot.png" alt="Screenshot of the Cypher audio streaming platform interface">
+                    <p class="project-description">
+                        This project is a modern audio streaming platform in the style of SoundCloud or Spotify, realized with a robust MERN stack and focused on secure content management and a seamless user experience.
+                    </p>
                     <div class="tech-stack">
-                        <img class="tech-icon" src="images/react.svg">
-                        <img class="tech-icon" src="images/docker.svg">
-                        <img class="tech-icon" src="images/nodejs.svg">
-                        <img class="tech-icon" src="images/aws.svg">
+                        <img class="tech-icon" src="images/react.svg" alt="React icon">
+                        <img class="tech-icon" src="images/docker.svg" alt="Docker icon">
+                        <img class="tech-icon" src="images/nodejs.svg" alt="Node.js icon">
+                        <img class="tech-icon" src="images/aws.svg" alt="AWS icon">
                     </div>
                     <a href="https://github.com/clizzix/cypher" target="_blank">View on Github</a>
                 </div>
@@ -68,18 +70,18 @@
                 <div class="project-card">
                 <div class="project-header" data-project-id="1">
                     <h3>Full-Stack Blog App</h3>
-                    <span class="arrow-icon">→</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
                 </div>
-                <div class="project-details" id="details-1">
+                <div class="project-details" id="details-1" hidden>
                     <img class="project-pic" src="images/my-blog-app.png" alt="Vorschaubild">
-                    <p class="project-description">Diese App ist eine voll funktionsfähige Blog-Anwendung, die im Rahmen eines Lernprojekts entwickelt wurde,
-                         um meine Kompetenzen im modernen MERN-Stack (MongoDB, Express.js, React, Node.js) zu demonstrieren. Sie bietet vollständige CRUD- Funktionalität.
-                        Die saubere Implementierung der Validierung und der Ladezustände im Frontend war ein besonderer Fokus, um die Benutzerfreundlichkeit zu 
-                        maximieren.</p>
+                    <p class="project-description">
+                        This app is a fully functional blog application developed as a learning project to demonstrate my proficiency in the modern MERN stack (MongoDB, Express.js, React, Node.js). It offers complete CRUD functionality.
+                        A particular focus was placed on the clean implementation of validation and loading states in the frontend to maximize user experience and usabilit
+                    </p>
                     <div class="tech-stack">
-                        <img class="tech-icon" src="images/react.svg">
-                        <img class="tech-icon" src="images/nodejs.svg">
-                        <img class="tech-icon" src="images/mongoose.svg">
+                        <img class="tech-icon" src="images/react.svg" alt="React icon">
+                        <img class="tech-icon" src="images/nodejs.svg" alt="Node.js icon">
+                        <img class="tech-icon" src="images/mongoose.svg" alt="Mongoose icon">
                     </div>
                     <a href="https://github.com/clizzix/my-blogg-app-fullstack" target="_blank">View on Github</a>
                 </div>
@@ -89,17 +91,17 @@
                 <div class="project-card">
                 <div class="project-header" data-project-id="2">
                     <h3>Product Page (E-Commerce)</h3>
-                    <span class="arrow-icon">→</span>
+                    <span class="arrow-icon" aria-hidden="true">→</span>
                 </div>
-                <div class="project-details" id="details-2">
+                <div class="project-details" id="details-2" hidden>
                     <img class="project-pic" src="images/Healthify.png" alt="Vorschaubild">
-                    <p class="project-description">Dieses Projekt dient als Beispiel für eine Produktwebsite. Sie weißt ein klares modernes Design auf 
-                        und implementiert ein Hamburger Menü durch JavaScript. Das Design ist flexibel auf jede Bildschirmgröße angepasst.  
+                    <p class="project-description">
+                        This project is a showcase of a modern product website (or product landing page), featuring a clean, contemporary design. It demonstrates a commitment to user-centric development by implementing a fully responsive layout that seamlessly adapts to any screen size.  
                     </p>
                     <div class="tech-stack">
-                        <img class="web-dev-icon" src="images/html5.svg">
-                        <img class="web-dev-icon" src="images/css3.svg">
-                        <img class="web-dev-icon" src="images/js.svg">
+                        <img class="web-dev-icon" src="images/html5.svg" alt="HTML5 icon">
+                        <img class="web-dev-icon" src="images/css3.svg" alt="CSS3 icon">
+                        <img class="web-dev-icon" src="images/js.svg" alt="JavaScript icon">
                     </div>
                     <a href="https://github.com/clizzix/healthify" target="_blank">View on Github</a>
                 </div>
@@ -109,14 +111,14 @@
         <section id="skills">
             <h2>Skills</h2>
             <div class="skill-icons">
-                <img class="skill-icon" src="images/html5.svg" alt="html5">
-                <img class="skill-icon"src="images/css3.svg" alt="css3">
-                <img class="skill-icon"src="images/js.svg" alt="JavaScript">
-                <img class="skill-icon"src="images/react.svg" alt="react">
-                <img class="skill-icon"src="images/nodejs.svg" alt="node.js">
-                <img class="skill-icon"src="images/docker.svg" alt="docker">
-                <img class="skill-icon"src="images/python.svg" alt="python">
-                <img class="skill-icon" src="images/github.svg" alt="GitHub">
+                <img class="skill-icon" src="images/html5.svg" alt="html5 icon">
+                <img class="skill-icon"src="images/css3.svg" alt="css3 icon">
+                <img class="skill-icon"src="images/js.svg" alt="JavaScript icon">
+                <img class="skill-icon"src="images/react.svg" alt="react icon">
+                <img class="skill-icon"src="images/nodejs.svg" alt="node.js icon">
+                <img class="skill-icon"src="images/docker.svg" alt="docker icon">
+                <img class="skill-icon"src="images/python.svg" alt="python icon">
+                <img class="skill-icon" src="images/github.svg" alt="GitHub icon">
             </div>
         </section>
     </main>
@@ -125,8 +127,8 @@
             <h2>Contact</h2>
             <a class="mail-link" href="mailto:fink.jon@hotmail.com">fink.jon@hotmail.com</a>
             <div class="icon-container">
-                <a href="https://www.linkedin.com/in/jonas-fink-225335355/" target="_blank"><img class="media-icon" src="images/linkedin.png"/></a>
-                <a href="https://github.com/clizzix" target="_blank"><img class="media-icon" src="images/github.png"/></a>
+                <a href="https://www.linkedin.com/in/jonas-fink-225335355/" target="_blank"><img class="media-icon" src="images/linkedin.png" alt="LinkedIn Profile"/></a>
+                <a href="https://github.com/clizzix" target="_blank"><img class="media-icon" src="images/github.png" alt="GitHub Profile"/></a>
             </div>
         </section>
     </footer>
